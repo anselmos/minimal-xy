@@ -106,11 +106,9 @@
   <body>
     <div class="w3-row w3-card w3-white">
       <header id="header">
-        {% if " " in AUTHOR %}
-        <a href="{{ SITEURL }}" id="header-logo" title="Home">{{ AUTHOR[0] + AUTHOR[AUTHOR.index(" ")+1] }}</a>
-        {% else %}
-        <a href="{{ SITEURL }}" id="header-logo" title="Home">{{ AUTHOR[0] }}</a>
-        {% endif %}
+          {% if AUTHOR_HEADER %}
+              <a href="{{ SITEURL }}" title="Home"><img style="height:100px" src="{{AUTHOR_HEADER}}"></img></a>
+          {% endif %}
         <nav id="header-menu">
           <ul>
             {% if DISPLAY_PAGES_ON_MENU %}
